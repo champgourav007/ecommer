@@ -175,5 +175,5 @@ MEDIA_URL = "/uploads/products/"
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"shop/static/images"),
+    os.path.join(BASE_DIR,"static"),
 ]
