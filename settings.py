@@ -167,7 +167,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # MEDIA_ROOT=os.path.join(BASE_DIR,"uploads/products/")
 
-# MEDIA_ROOT=BASE_DIR
+MEDIA_ROOT=BASE_DIR
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/' 
@@ -178,6 +178,6 @@ STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
 ]
 
-MEDIA_ROOT=os.path.join(BASE_DIR, 'static/images')
+# MEDIA_ROOT=os.path.join(BASE_DIR, 'static/images')
 
 
