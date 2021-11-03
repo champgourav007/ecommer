@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'whitenoise.runserver_nostatic',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -166,18 +165,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# MEDIA_ROOT=os.path.join(BASE_DIR,"uploads/products/")
+# MEDIA_ROOT=os.path.join(sBASE_DIR,"uploads/products/")
 
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = "/uploads/products/"
-MEDIA_ROOT=BASE_DIR
+# MEDIA_URL = "/uploads/products/"
+# MEDIA_ROOT=os.path.join(BASE_DIR, 'uploads')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"shop/static/images"),
 ]
 
-
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+MEDIA_ROOT=BASE_DIR
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+MEDIA_URL = "/uploads/products/"
