@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-import django_heroku
+# import django_heroku
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myEcom.settings")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -196,7 +196,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = "/uploads/products/"
 MEDIA_ROOT=BASE_DIR
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
