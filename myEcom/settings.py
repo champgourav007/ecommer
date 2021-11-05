@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'myEcom.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 DATABASES= {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql.psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd2bsoj2euulpg3',
         'USER': 'hsdqocqailbhnk',
         'PASSWORD':'608b9589be8e26bcdf72789de388ec4df4c68c3d8463bdc77e283a68ffeaa12e',
