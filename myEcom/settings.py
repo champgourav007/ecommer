@@ -88,16 +88,16 @@ WSGI_APPLICATION = 'myEcom.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-try:
-  from myEcom.settings import DATABASES
-except:
-   import dj_database_url  
-#    import dotenv
-   DATABASES = {}
-   DATABASES['default'] = dj_database_url.config()
-   STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
-   SECURE_SSL_REDIRECT = True # [1]
-   SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+DATABASES= {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql.psycopg2',
+        'NAME': 'd2bsoj2euulpg3',
+        'USER': 'hsdqocqailbhnk',
+        'PASSWORD':'608b9589be8e26bcdf72789de388ec4df4c68c3d8463bdc77e283a68ffeaa12e',
+        'HOST': 'ec2-34-225-66-116.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -147,7 +147,6 @@ USE_TZ = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_URL = '/static/'
 
 
@@ -187,13 +186,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # MEDIA_URL = "/uploads/products/"
 # MEDIA_ROOT=os.path.join(BASE_DIR, 'uploads')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"shop/static/images"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,"shop/static/images"),
+# ]
 
-MEDIA_ROOT=BASE_DIR
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+django_heroku.settings(locals())
+
 MEDIA_URL = "/uploads/products/"
+MEDIA_ROOT=BASE_DIR
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
