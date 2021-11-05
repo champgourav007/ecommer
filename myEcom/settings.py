@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-# import django_heroku
+import django_heroku
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myEcom.settings")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -79,12 +79,25 @@ WSGI_APPLICATION = 'myEcom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+try:
+  from myEcom.settings import DATABASES
+except:
+   import dj_database_url  
+#    import dotenv
+   DATABASES = {}
+   DATABASES['default'] = dj_database_url.config()
+   STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
+   SECURE_SSL_REDIRECT = True # [1]
+   SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Password validation
