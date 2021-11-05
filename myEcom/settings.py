@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-import django_heroku
+# import django_heroku
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myEcom.settings")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -193,7 +193,7 @@ STATICFILES_DIRS = [
 # STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 MEDIA_URL = "/uploads/products/"
 MEDIA_ROOT=BASE_DIR
