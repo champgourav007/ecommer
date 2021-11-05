@@ -202,6 +202,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = "/image/download/"
 MEDIA_ROOT = BASE_DIR
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'shop/static/images'),
+    # Add to this list all the locations containing your static files 
+)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
