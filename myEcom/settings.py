@@ -27,12 +27,15 @@ SECRET_KEY = 'django-insecure-ch#erifob$-m25fm&c7tcol8j)+7vzbm$($x=$-&e*^s4c+ta!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1:8000','e-comerr.herokuapp.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1','diksha-ecom.herokuapp.com'
+    ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'shop',
     'shop.apps.ShopConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -199,9 +202,14 @@ STATICFILES_DIRS = [
 # django_heroku.settings(locals())
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_URL = "/image/download/"
-MEDIA_ROOT = BASE_DIR
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES = [
+    BASE_DIR / "static"
+]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "uploads"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
