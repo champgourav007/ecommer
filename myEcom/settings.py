@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ch#erifob$-m25fm&c7tcol8j)+7vzbm$($x=$-&e*^s4c+ta!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1','diksha-ecom.herokuapp.com'
@@ -189,9 +189,7 @@ USE_TZ = True
 # MEDIA_URL = "/uploads/products/"
 # MEDIA_ROOT=os.path.join(BASE_DIR, 'uploads')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"staticfiles/images"),
-]
+
 
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -203,6 +201,9 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 
 
 MEDIA_URL = "/media/"
